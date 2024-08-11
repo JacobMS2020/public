@@ -1,0 +1,70 @@
+/*
+Colors: beige, saddlebrown, and burlywood
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    background-color: beige;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header {
+    padding: 0 20px;
+    background-image: linear-gradient(to bottom, rgb(224, 207, 184), beige);
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#website-name {
+    font-weight: bold;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+}
+
+#website-name a {
+    color: saddlebrown;
+}
+
+img {
+    max-width: 100px;
+}
+
+ul {
+    list-style: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+ul a {
+    color: saddlebrown;
+    font-size: 20px;
+}
+
+ul li {
+    padding: 5px;
+    margin-left: 10px;
+}
+
+ul li:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+    cursor: pointer;
+}

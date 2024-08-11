@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Game</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/index.css">
+    <style>
+        .outline {
+            border: 2px solid green; /* Green outline for clicked icons */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="website-name"><a href="/">Server Game</a></div>
+        <nav>
+            <ul>
+                <li><img class="icon" draggable="false" src="/images/router.png"></li>
+                <li><img class="icon" draggable="false" src="/images/power.png"></li>
+                <li><img class="icon" draggable="false" src="/images/server.png"></li>
+                <li><img class="icon" draggable="false" src="/images/testing.png"></li>
+            </ul>
+        </nav>
+    </header>
+    <img class="draggable" alt="Public Cloud" draggable="false" src="/images/cloud.png">
+</body>
+
+<script>
+    // Function to handle dragging
+    function handleDrag(element) {
+        let isDragging = false;
+        let offsetX, offsetY;
+        let startX, startY;
+
+        element.addEventListener('mousedown', (e) => {
+            startX = e.clientX;
+            startY = e.clientY;
+
+            isDragging = false;
+            offsetX = e.clientX - element.getBoundingClientRect().left;
+            offsetY = e.clientY - element.getBoundingClientRect().top;
+            element.style.cursor = 'grabbing';
+
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('mouseup', onMouseUp);
+        });
+
+        function onMouseMove(e) {
+            if (!isDragging) {
+                const dx = e.clientX - startX;
+                const dy = e.clientY - startY;
+                if (Math.sqrt(dx * dx + dy * dy) > 5) { // Drag threshold
+                    isDragging = true;
+                    element.classList.remove('outline');
+                }
+            }
+            if (isDragging) {
+                element.style.left = `${e.clientX - offsetX}px`;
+                element.style.top = `${e.clientY - offsetY}px`;
+            }
+        }
+
+        function onMouseUp(e) {
+            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseup', onMouseUp);
+
+            if (!isDragging) {
+                // Handle click (e.g., outline the element)
+                element.classList.add('outline');
+            }
+            element.style.cursor = 'grab';
+        }
+    }
+
+    // Make the initial cloud draggable
+    const cloud = document.querySelector('.draggable');
+    handleDrag(cloud);
+
+    // Duplicate and make icons draggable
+    const icons = document.querySelectorAll('.icon');
+    icons.forEach(icon => {
+        icon.addEventListener('mousedown', (e) => {
+            const clone = icon.cloneNode(true);
+            clone.style.position = 'absolute';
+            clone.style.left = `${e.clientX - icon.width / 2}px`;
+            clone.style.top = `${e.clientY - icon.height / 2}px`;
+            clone.style.cursor = 'grabbing';
+            document.body.appendChild(clone);
+            handleDrag(clone);
+        });
+    });
+</script>
+</html>
