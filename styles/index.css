@@ -4,6 +4,53 @@ Colors: beige, saddlebrown, and burlywood
 img {
     max-width: 100px;
   }
+
+  .bankUI {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+  }
+
+  .bankUI img {
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+  }
+
+  .bankUI a {
+    margin-bottom: 5px;
+  }
+
+  #money {
+    top: 50px;
+    left: 10px;
+  }
+
+  #money-up {
+    top: 75px;
+    left: 10px;
+  }
+
+  #money-down {
+    top: 100px;
+    left: 10px;
+  }
+
+  #oil {
+    top: 125px;
+    left: 10px;
+  }
+
+  #power-use {
+    top: 150px;
+    left: 10px;
+  }
+
+  #up-time {
+    top: 175px;
+    left: 10px;
+  }
   
   .draggable {
     width: 100px;
@@ -18,7 +65,13 @@ img {
   }
 
   #powerline-obj {
-    right: 50%;
+    right: 20px;
+    top: 40%;
+  }
+
+  #cloud-obj {
+    left: 20px;
+    top: 40%;
   }
   
   .outline {
@@ -51,4 +104,14 @@ img {
     z-index: 1; /* Make sure it’s above other elements */
     pointer-events: none; /* Prevent interactions with the SVG itself */
   }
-  
+
+  .tooltip {
+    position: absolute;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100px;
+    text-align: center;
+}  

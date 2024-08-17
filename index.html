@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Game</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/index.css">
+</head>
+
+<body>
+    <header>
+        <div id="website-name"><a href="/">Server Game</a></div>   
+        <nav>            
+            <ul>
+                <li><img id="contract-menu" draggable="false" src="/images/contract.png"></li> 
+                <li><img class="menu-obj" draggable="false" src="/images/checkpoint.png"></li>
+                <li><img class="menu-obj" draggable="false" src="/images/datacenter.png"></li>
+                <li><img class="menu-obj" draggable="false" src="/images/firewall.png"></li>
+                <li><img class="menu-obj" draggable="false" src="/images/router.png"></li>
+                <li><img class="menu-obj" draggable="false" src="/images/server.png"></li>
+                <li><img class="menu-obj" draggable="false" src="/images/generator.png"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="money" class="bankUI"><img src="/images/dollar.png"><a>1,000,000</a></div>
+    <div id="money-up" class="bankUI"><img src="/images/dollar-up.png"><a>0</a></div>
+    <div id="money-down" class="bankUI"><img src="/images/dollar-down.png"><a>0</a></div>
+    <div id="oil" class="bankUI"><img src="/images/oil-barrel.png"><a>1,000,000</a></div>
+    <div id="power-use" class="bankUI"><img src="/images/power.png"><a>0</a></div>
+    <div id="up-time" class="bankUI"><img src="/images/clock-red.png"><a>0%</a></div>
+
+    <div id="cloud-obj" class="draggable">
+        <p class="overlap-text">0</p>
+        <img draggable="false" src="/images/cloud.png">
+    </div>
+
+    <div id="powerline-obj" class="draggable">
+        <p class="overlap-text">0</p>
+        <img draggable="false" src="/images/powerline.png">
+    </div>
+
+    <svg id="connections" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;"></svg>
+</body>
+
+<script src="/scripts/game.js"></script>
+<script src="/scripts/ui.js"></script>
+
+</html>

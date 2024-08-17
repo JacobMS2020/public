@@ -46,6 +46,10 @@ function handleDrag(element) {
             }
         }
         if (isDragging) {
+            // remove the tooltip if it has one
+            const tooltip = document.querySelector('.tooltip');
+            if (tooltip) tooltip.remove();
+            
             element.style.left = `${e.clientX - offsetX}px`;
             element.style.top = `${e.clientY - offsetY}px`;
 
