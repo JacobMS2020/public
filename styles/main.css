@@ -69,3 +69,27 @@ ul li:hover {
     transition: 0.3s;
     cursor: pointer;
 }
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 100px;
+    font-weight: bolder;
+    background-color: beige; /* Or any other background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it is above all other content */
+}
+
+body.loaded #loading-screen {
+    display: none;
+}
+
+#loading-percentage {
+    font-weight: bold;
+    color: sandybrown /* Customize this color to match your design */
+}
