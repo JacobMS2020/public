@@ -1,6 +1,54 @@
-.draggable {
+/*
+Colors: beige, saddlebrown, and burlywood
+*/
+img {
+    max-width: 100px;
+  }
+  
+  .draggable {
     width: 100px;
     height: 100px;
-    position: absolute;
+    position: absolute; /* Changed to relative positioning */
     cursor: grab;
-}
+    display: flex; /* Use flexbox to center the image */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    padding: 0; /* Ensure no padding is applied */
+    box-sizing: border-box; /* Ensure the border doesn't affect the layout */
+  }
+
+  #powerline-obj {
+    right: 50%;
+  }
+  
+  .outline {
+    border: 3px solid green; /* Green outline for clicked icons */
+    box-sizing: content-box;
+  }
+  
+  .overlap-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the text */
+    z-index: 2; /* Increase z-index to ensure visibility */
+    font-size: 20px;
+    font-weight: bolder;
+    color: green; /* Adjust text color if needed */
+    background-color: beige;
+    border-radius: 5px;
+    opacity: 80%;
+    pointer-events: none; /* Disable pointer events for this text */
+    user-select: none; /* Prevent text selection/highlighting */
+  }
+  
+  #connections {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Make sure it’s above other elements */
+    pointer-events: none; /* Prevent interactions with the SVG itself */
+  }
+  

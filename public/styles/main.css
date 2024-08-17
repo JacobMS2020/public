@@ -18,6 +18,10 @@ body {
     background-color: beige;
 }
 
+.test {
+    background-color: red;
+}
+
 header a {
     text-decoration: none;
 }
@@ -25,7 +29,7 @@ header a {
 header {
     padding: 0 20px;
     background-image: linear-gradient(to bottom, rgb(224, 207, 184), beige);
-    height: 80px;
+    height: 100px;
     display: flex;
     justify-content: space-between;
 }
@@ -39,10 +43,6 @@ header {
 
 #website-name a {
     color: saddlebrown;
-}
-
-img {
-    max-width: 100px;
 }
 
 ul {
