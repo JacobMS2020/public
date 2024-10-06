@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/game.css">
+    <title></title>
+</head>
+
+<body>
+    <button id="btnTest" onclick="test()">Test</button>
+
+    <div class="gameWindow">
+        <div class="boardContainer">
+            <div id="game-board1" class="game-board">
+                <!-- Game content will be dynamically updated -->
+            </div>
+        </div>
+        <div id="ui" class="ui">
+            <div class="ready">
+                <button id="btnReady" onclick="newGame()" style="background-color: #118AB2;">READY!</button>
+            </div> 
+            <div class="aiUi" >
+                <p id="aiText">WELCOME PLAYERS!</p>
+            </div>
+            <div class="nextPieceUi" style="background-color: #118AB2;">
+                <div class="nextPieceTitle">
+                    <p>NEXT</p>
+                </div>
+                <div class="nextPiece">
+                    <img src="/images/piece_test.png">
+                </div>
+            </div>
+            <div class="scoreBoards">
+                <div class="scoreBoard" style="background-color: #06D6A0;">
+                    <div class="playerName">
+                        <p>Player Name</p>
+                    </div>
+                    <div class="playerScore">
+                        <p>SCORE:</p>
+                        <p>00000</p>
+                    </div>
+                </div>
+                <div class="scoreBoard" style="background-color: #EF476F;">
+                    <div class="playerName">
+                        <p>Player Name</p>
+                    </div>
+                    <div class="playerScore">
+                        <p>SCORE:</p>
+                        <p>00000</p>
+                    </div>
+                </div>
+            </div>           
+        </div>
+        <div class="boardContainer">
+            <div id="game-board2" class="game-board">
+                <!-- Game content will be dynamically updated -->
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- Include Socket.IO -->
+<script src="/socket.io/socket.io.js"></script>
+<!-- Game logic -->
+<script src="/scripts/game.js"></script>
+<!-- Game UI script -->
+<script src="/scripts/gameUi.js"></script>
+
+</html>

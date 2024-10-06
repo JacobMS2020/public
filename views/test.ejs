@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/test.css">
+    <title></title>     
+</head>
+
+<body>
+
+    <button id="btnTest" onclick="test()">Test</button>
+
+    <div id="divLogin" class="login">
+        <h1>Welcome to the Game</h1>
+        <input id="username" placeholder="Username">
+        <button id="btnStartGame" onclick="newGame()">Start Game</button>
+    </div>
+
+    <div class="gameContainer">
+        <div id="game-board">
+            <!-- Game content will be dynamically updated -->
+        </div>   
+    </div>
+</body>
+
+<script>
+    function test() {
+        var row = 1;
+        var col = 1;
+        document.getElementById(`square-${row}-${col}`).style.backgroundColor = "black";
+    }
+</script>
+
+<!-- Include Socket.IO -->
+<script src="/socket.io/socket.io.js"></script>
+<!-- Game logic -->
+<script src="/scripts/test.js"></script>
+
+</html>
